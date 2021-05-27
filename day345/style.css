@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  margin: 0;
+  background-color: #333;
+  color: #222;
+  overflow-x: hidden;
+  position: relative;
+}
+/* loading */
+.loading {
+  position: absolute;
+  min-width: 100vw;
+  min-height: 100vh;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  z-index: 102;
+}
+.loading .loading-text {
+  font-size: 30px;
+  font-weight: 700;
+  color: rgba(8, 8, 8, 0.801);
+}
+/* container */
+.container {
+  background-color: #fff;
+  padding: 50px;
+  transition: transform 0.5s linear;
+  transform-origin: top left; /*property allows you to change the position of transformed elements.*/
+  width: 100vw;
+  min-height: 100vh;
+  /* filter: blur(30px); */
+}
+.container.show-nav {
+  transform: rotate(-20deg);
+}
+.container.show-nav .circle {
+  transform: rotate(-90deg)
+}
+.container-circle {
+  position: fixed;
+  top: -100px;
+  left: -100px;
+  z-index: 101;
+}
+.circle {
+  height: 200px;
+  width: 200px;
+  position: relative;
+  border-radius: 50%;
+  background-color: #607d8b;
+  transition: transform 0.5s linear;
+}
+.circle button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100px;
+  background: transparent;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: #fff;
+}
+.circle button#open {
+  left: 60%;
+}
+
+.circle button#close {
+  top: 60%;
+  transform: rotate(90deg);
+  transform-origin: top left;
+}
+
+/* content */
+
+.content {
+  max-width: 1000px;
+  margin: 50px auto;
+  position: relative;
+}
+.content img {
+  max-width: 100%;
+}
+.content h1 {
+  margin: 0;
+}
+.content small {
+  color: #555;
+  font-style: italic;
+}
+.content p {
+  color: #333;
+  line-height: 1.7;;
+}
+.content .input-box {
+  position:absolute;
+  top: -20px;
+  right: 0;
+}
+.input-box .search {
+  position: relative;
+}
+.input-box .search input {
+  width: 40px;
+  height: 40px;
+  font-size: 14px;
+  padding: 15px;
+  border: 1px solid #000;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+.input-box .search button {
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  border: 0;
+  border-radius: 3px;
+  cursor: pointer;
+  transition : transform 0.3s ease;
+}
+.input-box .search.active input {
+  width: 200px;
+}
+/* nav */
+
+.container.show-nav + nav li {
+  transform: translateX(0);
+  transition-delay: 0.3s;
+}
+
+nav {
+  position: fixed;
+  left: 0;
+  bottom: 40px;
+  z-index: 100;
+}
+
+nav ul {
+  list-style-type: none;
+  padding-left: 30px;
+}
+nav ul li {
+  color: #fff;
+  margin: 30px 0;
+  text-transform: uppercase;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease-in;
+}
+nav ul li i {
+  font-size:20px;
+  margin-right:10px;
+  color: #fff
+}
+nav ul li + li {
+  margin-left: 20px;
+  transform: translateX(-150%);
+}
+nav ul li + li + li {
+  margin-left: 40px;
+  transform: translateX(-200%);
+}
