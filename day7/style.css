@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+  --left-bg-color: #1717bca1;
+  --right-bg-color: #333333a3;
+  --left-bg-btn-hover: #1717bc;
+  --right-bg-btn-hover: #17bc3f;
+  --hover-size: 75%;
+  --other-size: 25%;
+  --speed: 1000ms;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+}
+
+.split {
+  position: absolute;
+  height: 100%;
+  overflow: hidden;
+  width: 50%;
+}
+
+.split.left {
+  left: 0;
+  background-image: url('https://genk.mediacdn.vn/139269124445442048/2021/3/9/photo-1-16152785247611799272501.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.split.left::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--left-bg-color);
+}
+.split.right {
+  right: 0;
+  background-image: url('https://i.ytimg.com/vi/0tUqIHwHDEc/maxresdefault.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.split.right::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--right-bg-color);
+}
+.split.left, .split.right, .split.left::before, .split.right::before {
+  transition: all var(--speed) ease-in-out;
+}
+h1 {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  color: #fff;
+  font-size: 4rem;
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
+
+/* button */
+a.btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-decoration: none;
+  color: #fff;
+  padding: 1.5rem;
+  width: 15rem;
+  display: grid;
+  place-items: center;
+  border: 0.2rem solid #fff;
+  text-transform: uppercase;
+}
+
+.split.left .btn:hover {
+  background-color: var(--left-bg-btn-hover);
+  border-color: var(--left-bg-btn-hover);
+}
+.split.right .btn:hover {
+  background-color: var(--right-bg-btn-hover);
+  border-color: var(--right-bg-btn-hover);
+}
+
+/* hover handle*/
+.hover-left .left {
+  width: var(--hover-size);
+}
+.hover-left .right {
+  width: var(--other-size);
+}
+.hover-right .left {
+  width: var(--other-size);
+}
+.hover-right .right {
+  width: var(--hover-size);
+}
+
+@media (max-width: 800px) {
+  h1 {
+    font-size: 3rem;
+    top: 30%;
+  }
+  a.btn {
+    width: 12rem;
+    padding: 1.2rem;
+  }
+}
