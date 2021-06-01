@@ -66,3 +66,36 @@ h1 {
 .active .faq-text {
   display: block;
 }
+
+/* toggle btn */
+.faq-toggle {
+  background-color: transparent;
+  border: 0;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  height: 30px;
+  width: 30px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 50%;
+} 
+
+.faq-toggle .fa-times {
+  display: none;
+}
+
+.active .faq-toggle .fa-chevron-down {
+  display: none;
+}
+.active .faq-toggle .fa-times {
+  display: block;
+}
+
+.active .faq-toggle {
+  background-color: gray;
+  color: #fff;
+}
