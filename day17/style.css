@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+  --primary-color: #22254b;
+  --secondary-color: #373b69;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--primary-color);
+  margin: 0;
+}
+
+header {
+  padding: 2rem;
+  width: 100%;
+  background-color: var(--secondary-color);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+header .search {
+  background-color: transparent;
+  border: 1px solid var(--primary-color);
+  padding: 10px 20px;
+  border-radius: 20px;
+  color: #fff;
+}
+header .search::placeholder {
+  color:#7880d6;
+  font-weight: bold;
+}
+header .search:focus {
+  background-color: var(--primary-color);
+  outline: none;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.movie {
+  width: 300px;
+  background-color: var(--secondary-color);
+  margin: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+  position: relative;
+  border-radius: 3px;
+}
+.movie img {
+  width: 100%;
+}
+.movie .movie-info {
+  padding: 0.5rem 1rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #eee;
+  letter-spacing: 0.5px
+}
+.movie .movie-info h3 {
+  margin-top: 0;
+}
+.movie .movie-info span {
+  background-color: var(--primary-color);
+  padding: 0.25rem 0.5rem;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.movie .movie-info span.green {
+  color: green;
+}
+.movie .movie-info span.yellow {
+  color: yellow
+}
+.movie .movie-info span.red {
+  color: red;
+}
+
+/* overview */
+
+.movie .overview {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  color: #000;
+  max-height: 100%;
+  padding: 1rem;
+  transform: translateY(101%);
+  transition: 0.3s ease-in;
+}
+.movie:hover .overview {
+  transform: translateY(0)
+}
