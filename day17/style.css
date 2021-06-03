@@ -42,6 +42,7 @@ header .search:focus {
 main {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .movie {
