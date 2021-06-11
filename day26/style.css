@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  width: 100%;
+}
+
+.container {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+.slide-left {
+  width: 35%;
+  height: 100%;
+  position: absolute;
+  top:0;
+  left: 0;
+  transition: transform 0.5s ease-in-out;
+}
+.slide-left div {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.slide-right {
+  width: 65%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 35%;
+  transition: transform 0.5s ease-in-out;
+}
+.slide-right div {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.container .btn-action button {
+  position: absolute;
+  top: 50%;
+  left: 35%;
+  z-index: 1000;
+  padding: 15px;
+  color: #999;
+  cursor: pointer;
+  border:none;
+  background-color: #fff;
+}
+.container .btn-action button:hover {
+  color: #222
+}
+.container .btn-action .down-btn {
+  transform: translateX(-100%);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.container .btn-action .up-btn {
+  transform: translateY(-100%);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
